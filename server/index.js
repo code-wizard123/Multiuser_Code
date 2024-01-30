@@ -17,7 +17,11 @@ app.use(cors());
 //Routes use
 app.use('/auth', require('./routes/auth'));
 
+app.get('/test', (req, res) => {
+    res.status(200).json({ message: "Testing 123" });
+})
+
 //Database Connection
 mongoose.connect(process.env.MONGO_URI).then(() => {
-    app.listen(5000, () => console.log('\x1b[36m', "Server running: http://localhost:5000", '\x1b[0m'));
+    app.listen(5000, () => console. log('\x1b[36mSERVER RUNNING: http://localhost:5000\x1b[0m'));
 }).catch(err => console.log(err));

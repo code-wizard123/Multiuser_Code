@@ -11,7 +11,7 @@ const handleErrors = (err) => {
     let errors = { email: '', password: '' };
 
     //Validation Errors
-    if(err.message.includes('user validation failed')){
+    if (err.message.includes('user validation failed')) {
         Object.values(err.errors).forEach(({ properties }) => {
             errors[properties.path] = properties.message;
         });
@@ -20,7 +20,7 @@ const handleErrors = (err) => {
     }
 
     //Duplicate Email Error
-    if(err.code === 11000){
+    if (err.code === 11000) {
         errors.email = 'That email is already registered';
         return errors;
     }
@@ -30,20 +30,39 @@ const handleErrors = (err) => {
 router.post('/register', async (req, res) => {
     const { email, password, role } = req.body;
 
-    try{
+    try {
         const user = await User.create({ email, password, role });
         res.status(200).json(user);
     }
-    catch(err){
+    catch (err) {
         const errors = handleErrors(err);
         res.status(400).json({ errors });
     }
 });
 
 router.post('/login', async (req, res) => {
-    const { username, password, token } = req.body;
+    const { email, password } = req.body;
 
-    res.json({ message: `No ${username}` });
+    try {
+        const user = await User.findOne({ email });
+
+        if (user) {
+            const auth = await bcrypt.compare(password, user.password);
+            if (auth) {
+                res.status(200).json({ user: user.email, token });
+            }
+            else{
+                res.status(400).json({ error: 'Incorrect Password' });
+            }
+        }
+        else {
+            res.status(400).json({ error: 'User not found' })
+        }
+    }
+    catch (err) {
+        console.log(err);
+        res.status(400).json(err);
+    }
 });
 
 router.get('/cookie', (req, res) => {

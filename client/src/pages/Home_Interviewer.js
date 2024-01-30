@@ -17,7 +17,7 @@ const Home = () => {
             </div>
           </div>
           <div className='right'>
-            <img src='Webinar-cuate.png'></img>
+            <img alt="img" src='Webinar-cuate.png'></img>
           </div>
 
         </div>
