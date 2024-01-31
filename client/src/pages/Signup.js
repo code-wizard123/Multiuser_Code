@@ -12,7 +12,7 @@ const Signup = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setError("");
+    setError(null);
     await axios.post("/auth/register", {
       email: details.email,
       password: details.password,

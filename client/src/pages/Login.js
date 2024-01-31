@@ -1,10 +1,8 @@
 import React, { useState } from 'react'
 import '../css/Login.css'
 import axios from 'axios'
-import { useNavigate } from 'react-router-dom'
 
 const Login = () => {
-  const navigate = useNavigate();
   const [interviewer, setInterviewer] = useState(true)
   const [error, setError] = useState("")
   const [details, setDetails] = useState({
@@ -20,7 +18,7 @@ const Login = () => {
       password: details.password,
     })
       .then(async (res) => {
-        if(res.status === 200){
+        if (res.status === 200) {
           const data = await res.data;
           console.log(data);
         }
