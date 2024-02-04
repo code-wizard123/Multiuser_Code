@@ -26,7 +26,7 @@ const Signup = () => {
               <input type="checkbox" id="toggle-switch"></input>
               <label class="switch-signup" for="toggle-switch"></label>
             </div>
-            <p className='switch-txt-left-signup'>Switch to Interviewee Sign-in</p>
+            <p className='switch-txt-left-signup'>Switch to Interviewee Sign-up</p>
           </div>
 
           <div>
