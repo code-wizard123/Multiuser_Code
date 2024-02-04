@@ -6,13 +6,11 @@ import Signup from './pages/Signup';
 import Meet from './pages/Meet';
 import axios from 'axios';
 import { AuthContextProvider } from './context/AuthContext';
-import { ContextProvider } from './context/SocketContext';
 
 axios.defaults.withCredentials = true;
 
 function App() {
   return (
-
     <AuthContextProvider>
       <Router>
         <Routes>
