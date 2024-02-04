@@ -1,5 +1,6 @@
 import React from 'react'
 import '../css/Home_Interviewer.css'
+
 const Home = () => {
   return (
     <div className='margin-auto'>
@@ -17,7 +18,7 @@ const Home = () => {
             </div>
           </div>
           <div className='right'>
-            <img src='Webinar-cuate.png'></img>
+            <img alt="img" src='Webinar-cuate.png'></img>
           </div>
 
         </div>
@@ -32,7 +33,7 @@ const Home = () => {
         <div className='card-details'>
 
           <div className='card-A-witdh'>
-            <img src='A-bg.png' className='A-img-width'></img>
+            <img src='A-bg.png' alt="A" className='A-img-width'></img>
           </div>
           <div className='text-width'>
             <p className='text-A-bold'>Name : Serena Rodriguez</p>
@@ -41,13 +42,13 @@ const Home = () => {
             <p className='text-bold'>Qualification: Bachelor's degree in Computer Science</p>
           </div>
           <div className='take-meet'>
-            <button type="reset" onclick="location.href='http:/Html/Storepage.html'" className='take-meet-btn'>Take Meeting</button>
+            <button type="reset" className='take-meet-btn'>Take Meeting</button>
           </div>
         </div>
 
         <div className='card-details'>
           <div className='card-A-witdh'>
-            <img src='B-bg.png' className='A-img-width'></img>
+            <img src='B-bg.png' alt="A" className='A-img-width'></img>
           </div>
           <div className='text-width'>
             <p className='text-A-bold'>Name : Serena Rodriguez</p>
@@ -56,13 +57,13 @@ const Home = () => {
             <p className='text-bold'>Qualification: Bachelor's degree in Computer Science</p>
           </div>
           <div className='take-meet'>
-            <button type="reset" onclick="location.href='http:/Html/Storepage.html'" className='take-meet-btn'>Take Meeting</button>
+            <button type="reset" className='take-meet-btn'>Take Meeting</button>
           </div>
         </div>
 
         <div className='card-details'>
           <div className='card-A-witdh'>
-            <img src='C-bg.png' className='A-img-width'></img>
+            <img src='C-bg.png' alt="A" className='A-img-width'></img>
           </div>
           <div className='text-width'>
             <p className='text-A-bold'>Name : Serena Rodriguez</p>
@@ -71,7 +72,7 @@ const Home = () => {
             <p className='text-bold'>Qualification: Bachelor's degree in Computer Science</p>
           </div>
           <div className='take-meet'>
-            <button type="reset" onclick="location.href='http:/Html/Storepage.html'" className='take-meet-btn'>Take Meeting</button>
+            <button type="reset" className='take-meet-btn'>Take Meeting</button>
           </div>
         </div>
       </div>
