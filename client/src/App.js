@@ -4,7 +4,6 @@ import Home from './pages/Home_Interviewer';
 import Home_B from './pages/H_Interviewee'
 import Login from './pages/Login';
 import Login_B from './pages/Login_B';
-import Register from './pages/Register';
 import Signup from './pages/Signup';
 import Signup_B from './pages/Signup_B';
 import M_interviewer from './pages/M_interviewer';

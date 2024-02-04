@@ -1,9 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap");
 
-
 .meet-div {
     width: 100%;
     height: 100%;
+    padding-top: 7%;
 }
 
 .inner-div-cam {
@@ -13,27 +13,30 @@
     justify-content: space-evenly;
     flex-direction: row;
     flex-wrap: wrap;
-    margin-top: 150px;
 }
 
+.left-cam {
+    background-color: black;
+}
+
+.right-cam {
+    background-color: red;
+}
 
 .cam-A {
     border-radius: 15px;
     width: 550px;
     height: 350px;
-    background-color: black;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-    cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 0.4s ease;
 }
 
 .cam-B {
     border-radius: 15px;
     width: 550px;
     height: 350px;
-    background-color: red;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-
+    transition: all 0.4s ease;
 }
 
 .img-cam-A {
@@ -51,97 +54,110 @@
     width: 100%;
     height: 100px;
     display: flex;
-justify-content: center;
+    justify-content: center;
 }
-.center-optn{
-width: 50%;
-display: flex;
-justify-content: space-evenly;
-font-family: "poppins";
+
+.center-optn {
+    width: 50%;
+    display: flex;
+    justify-content: space-evenly;
+    font-family: "poppins";
 }
-.btn-A{
+
+.btn-A {
     text-align: center;
     width: 100px;
-    
+
 }
-.btn-A button{
+
+.btn-A button {
     width: 60px;
     border-radius: 50%;
     background-color: #0000FF;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
-.btn-A button:hover{
+
+.btn-A button:hover {
     background-color: black;
 }
-.btn-B button:hover{
+
+.btn-B button:hover {
     background-color: black;
 }
-.btn-C button:hover{
+
+.btn-C button:hover {
     background-color: black;
 }
-.btn-D button:hover{
+
+.btn-D button:hover {
     background-color: black;
 }
-.btn-A img{
+
+.btn-A img {
     margin-top: 2px;
     width: 30px;
 }
 
-.btn-B{
+.btn-B {
     text-align: center;
     width: 100px;
-    
+
 }
-.btn-B button{
+
+.btn-B button {
     width: 60px;
     border-radius: 50%;
     background-color: #0000FF;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
-.btn-B img{
+
+.btn-B img {
     margin-top: 2px;
     width: 30px;
 }
 
-.btn-C{
+.btn-C {
     text-align: center;
     width: 100px;
-    
+
 }
-.btn-C button{
+
+.btn-C button {
     width: 60px;
     border-radius: 50%;
     background-color: #0000FF;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
-.btn-C img{
+
+.btn-C img {
     margin-top: 2px;
     width: 30px;
 }
 
 
-.btn-D{
+.btn-D {
     text-align: center;
     width: 100px;
-    
+
 }
-.btn-D button{
+
+.btn-D button {
     width: 60px;
     border-radius: 50%;
     background-color: #ff0000;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
-.btn-D img{
+.btn-D img {
     margin-top: 2px;
     width: 30px;
 }
 
 
-.btn-E{
+.btn-E {
     text-align: center;
     width: 100px;
-    
+
 }
 
 
@@ -149,25 +165,24 @@ font-family: "poppins";
 
 
 
-@media screen and (max-width: 1200px){
+@media screen and (max-width: 1200px) {
     .cam-A {
         border-radius: 15px;
         width: 550px;
         height: 350px;
-        background-color: black;
         box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-        
+
     }
-    
+
     .cam-B {
         z-index: 1;
         border-radius: 15px;
         width: 350px;
         height: 250px;
-        background-color: red;
         box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
         margin-top: 100px;
     }
+
     .inner-div-cam {
 
         width: 100%;
@@ -180,25 +195,25 @@ font-family: "poppins";
     }
 
 }
-@media screen and (max-width: 1000px){
+
+@media screen and (max-width: 1000px) {
     .cam-A {
         border-radius: 15px;
         width: 450px !important;
         height: 350px;
-        background-color: black;
         box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-        
+
     }
-    
+
     .cam-B {
         z-index: 1;
         border-radius: 15px;
         width: 240px;
         height: 200px;
-        background-color: red;
         box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
         margin-top: 150px;
     }
+
     .inner-div-cam {
 
         width: 100%;
@@ -211,27 +226,26 @@ font-family: "poppins";
     }
 }
 
-@media screen and (max-width: 800px){
+@media screen and (max-width: 800px) {
     .cam-A {
         border-radius: 15px;
         width: 550px !important;
         height: 350px;
-        background-color: black;
         box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
         margin-top: -50px;
     }
-    
+
     .cam-B {
         z-index: 5;
         border-radius: 15px;
         width: 240px;
         height: 200px;
-        background-color: red;
         box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
         margin-top: -200px;
         margin-left: 210px;
         display: none;
     }
+
     .inner-div-cam {
         width: 100%;
         display: flex;
@@ -240,34 +254,35 @@ font-family: "poppins";
         flex-direction: column;
         flex-wrap: wrap;
     }
-    .center-optn{
+
+    .center-optn {
         width: 70%;
         display: flex;
         justify-content: space-evenly;
         font-family: "poppins";
-        }
+    }
 }
-@media screen and (max-width: 800px){
+
+@media screen and (max-width: 800px) {
     .cam-A {
         border-radius: 15px;
         width: 350px !important;
         height: 450px;
-        background-color: black;
         box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
         margin-top: -70px;
     }
-    
+
     .cam-B {
         z-index: 5;
         border-radius: 15px;
         width: 240px;
         height: 200px;
-        background-color: red;
         box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
         margin-top: -200px;
         margin-left: 210px;
         display: none;
     }
+
     .inner-div-cam {
         width: 100%;
         display: flex;
@@ -276,99 +291,113 @@ font-family: "poppins";
         flex-direction: column;
         flex-wrap: wrap;
     }
-    .center-optn{
+
+    .center-optn {
         margin-top: -80px;
         width: 90%;
         display: flex;
         justify-content: space-evenly;
         font-family: "poppins";
-        }
-        .center-optn p{
-            font-size: 12px;
-            font-weight: bold;
-        }
-        .btn-A{
-            text-align: center;
-            width: 100px;
-            
-        }
-        .btn-A button{
-            width: 55px;
-            border-radius: 50%;
-            background-color: #0000FF;
-            box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-        }
-        .btn-A button:hover{
-            background-color: black;
-        }
-        .btn-B button:hover{
-            background-color: black;
-        }
-        .btn-C button:hover{
-            background-color: black;
-        }
-        .btn-D button:hover{
-            background-color: black;
-        }
-        .btn-A img{
-            margin-top: 2px;
-            width: 23px;
-        }
-        
-        .btn-B{
-            text-align: center;
-            width: 100px;
-            
-        }
-        .btn-B button{
-            width: 55px;
-            border-radius: 50%;
-            background-color: #0000FF;
-            box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-        }
-        .btn-B img{
-            margin-top: 2px;
-            width: 23px;
-        }
-        
-        .btn-C{
-            text-align: center;
-            width: 100px;
-            
-        }
-        .btn-C button{
-            width: 55px;
-            border-radius: 50%;
-            background-color: #0000FF;
-            box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-        }
-        .btn-C img{
-            margin-top: 2px;
-            width: 23px;
-        }
-        
-        
-        .btn-D{
-            text-align: center;
-            width: 100px;
-            
-        }
-        .btn-D button{
-            width: 55px;
-            border-radius: 50%;
-            background-color: #ff0000;
-            box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-        }
-        
-        .btn-D img{
-            margin-top: 2px;
-            width: 23px;
-        }
-        
-        
-        .btn-E{
-            text-align: center;
-            width: 100px;
-            
-        }
+    }
+
+    .center-optn p {
+        font-size: 12px;
+        font-weight: bold;
+    }
+
+    .btn-A {
+        text-align: center;
+        width: 100px;
+
+    }
+
+    .btn-A button {
+        width: 55px;
+        border-radius: 50%;
+        background-color: #0000FF;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    }
+
+    .btn-A button:hover {
+        background-color: black;
+    }
+
+    .btn-B button:hover {
+        background-color: black;
+    }
+
+    .btn-C button:hover {
+        background-color: black;
+    }
+
+    .btn-D button:hover {
+        background-color: black;
+    }
+
+    .btn-A img {
+        margin-top: 2px;
+        width: 23px;
+    }
+
+    .btn-B {
+        text-align: center;
+        width: 100px;
+
+    }
+
+    .btn-B button {
+        width: 55px;
+        border-radius: 50%;
+        background-color: #0000FF;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    }
+
+    .btn-B img {
+        margin-top: 2px;
+        width: 23px;
+    }
+
+    .btn-C {
+        text-align: center;
+        width: 100px;
+
+    }
+
+    .btn-C button {
+        width: 55px;
+        border-radius: 50%;
+        background-color: #0000FF;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    }
+
+    .btn-C img {
+        margin-top: 2px;
+        width: 23px;
+    }
+
+
+    .btn-D {
+        text-align: center;
+        width: 100px;
+
+    }
+
+    .btn-D button {
+        width: 55px;
+        border-radius: 50%;
+        background-color: #ff0000;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    }
+
+    .btn-D img {
+        margin-top: 2px;
+        width: 23px;
+    }
+
+
+    .btn-E {
+        text-align: center;
+        width: 100px;
+
+    }
 }
