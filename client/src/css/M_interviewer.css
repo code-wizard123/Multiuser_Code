@@ -15,8 +15,16 @@
     flex-wrap: wrap;
 }
 
+#left-video{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: bottom;
+}
+
 .left-cam {
     background-color: black;
+    overflow: hidden;
 }
 
 .right-cam {

@@ -30,22 +30,6 @@ const io = require('socket.io')(server, {
     }
 });
 
-io.on('connection', (socket) => {
-    socket.emit('me', socket.id);
-
-    socket.on('disconnect', () => {
-        socket.broadcast.emit('callended');
-    })
-
-    socket.on('calluser', ({ userToCall, signalData, from, name}) => {
-        io.to(userToCall).emit('calluser', {signal: signalData, from, name});
-    })
-
-    socket.on('answercall', (data) => {
-        io.to(data.to).emit('callaccepted', data.signal);
-    })
-})
-
 //Database Connection
 mongoose.connect(process.env.MONGO_URI).then(() => {
     server.listen(process.env.PORT || 5000, () => console. log('\x1b[36mSERVER RUNNING: http://localhost:5000\x1b[0m'));
