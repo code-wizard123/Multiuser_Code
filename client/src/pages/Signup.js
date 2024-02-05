@@ -63,20 +63,21 @@ const Signup = () => {
               </div>
               <p className='switch-txt-left-signup'>Switch to {!interviewer ? "Interviewer" : "Interviewee"} Sign-in</p>
             </div>
-            <p className='switch-txt-left-signup'>Switch to Interviewee Sign-up</p>
-          </form>
-        </div>
+          
+
+    
 
         <div>
           <br></br>
           <div className='paddbutton-signup'>
             <button type="reset" onClick={handleSubmit}>Sign Up</button>
           </div>
-
         </div>
-
-      </div>
+      </form>
     </div>
+
+      </div >
+    </div >
   )
 }
 
