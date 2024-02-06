@@ -13,12 +13,10 @@ router.use(require('../middleware/auth.js'));
 //Routes
 router.post('/create', async (req, res) => {
     const user = await User.findById(req.id);
-    const { interviewee_id } = req.body;
+    const { interviewee_id, meet_id } = req.body;
 
     try {
         if (user.role === 'interviewer') {
-            const meet_id = Math.random().toString(36).substr(2, 12);
-
             const meet = new Meet({
                 meet_id: meet_id,
                 created_by: user._id,

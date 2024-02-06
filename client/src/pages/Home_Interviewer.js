@@ -1,7 +1,13 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 import '../css/Home_Interviewer.css'
+import { RoomProvider } from '../context/RoomContext'
 
 const Home = () => {
+  const createRoom = () => {
+    console.log("Creating Room")
+  }
+  
   return (
     <div className='margin-auto'>
       <div className='outer-interviewer'>
@@ -14,7 +20,7 @@ const Home = () => {
               <p>Welcome to our online interview hub, where opportunities meet talent. Designed to connect employers with top-notch candidates. Navigate user-friendly features, discover insightful resources, and embark on a journey of meaningful conversations. Your next career milestone awaits – dive into a world of possibilities and make your interview experience exceptional</p>
             </div>
             <div className='interview-submit'>
-              <button type="reset">Create Meeting</button>
+              <button onClick={createRoom}>Create Meeting</button>
             </div>
           </div>
           <div className='right'>
@@ -84,8 +90,6 @@ const Home = () => {
       <br></br>
       <br></br>
     </div>
-
-
   )
 }
 

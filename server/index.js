@@ -7,6 +7,7 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 require('dotenv').config();
 const cookieParser = require('cookie-parser');
+const { roomHandler } = require('./RoomHandler/Rooms');
 
 //Middleware
 app.use(express.urlencoded({ extended: true }));
@@ -29,6 +30,15 @@ const io = require('socket.io')(server, {
         methods: ["GET", "POST"]
     }
 });
+
+io.on('connection', (socket) => {
+    console.log("user connected")
+
+    roomHandler(socket);
+    socket.on('disconnect', () => {
+        console.log('user disconnected');
+    });
+})
 
 //Database Connection
 mongoose.connect(process.env.MONGO_URI).then(() => {

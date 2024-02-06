@@ -7,20 +7,25 @@ import Login_B from './pages/Login_B';
 import Signup from './pages/Signup';
 import Signup_B from './pages/Signup_B';
 import M_interviewer from './pages/M_interviewer';
+import MeetCreate from './pages/MeetCreate';
+import { RoomProvider } from './context/RoomContext';
 
 function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/Home" element={<Home />} />
-        <Route path="/Home_B" element={<Home_B />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/login_B" element={<Login_B />} />
-        <Route path="/Signup" element={<Signup />} />
-        <Route path="/Signup_B" element={<Signup_B />} />
-        <Route path="/M_interviewer" element={<M_interviewer />} />
-      </Routes>
-    </Router>
+    <RoomProvider>
+      <Router>
+        <Routes>
+          <Route path="/create" element={<MeetCreate />} />
+          <Route path="/Home" element={<Home />} />
+          <Route path="/Home_B" element={<Home_B />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/login_B" element={<Login_B />} />
+          <Route path="/Signup" element={<Signup />} />
+          <Route path="/Signup_B" element={<Signup_B />} />
+          <Route path="/M_interviewer" element={<M_interviewer />} />
+        </Routes>
+      </Router>
+    </RoomProvider>
   );
 }
 
