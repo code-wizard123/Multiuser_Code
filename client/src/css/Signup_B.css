@@ -16,7 +16,7 @@
 }
 
 .mid-signup-B {
-    width: 320px;
+    width: 350px;
     padding: 10px;
     background-color: white;
     border-radius: 10px;
@@ -41,6 +41,7 @@
 
 .leftfloat-signup-B {
     text-align: left;
+    width: 107%;
 }
 
 .leftfloattext-signup-B {
@@ -105,7 +106,7 @@ input[type="checkbox"]:checked+.switch-signup {
 
 .switch-txt-left-signup-B {
     text-align: left;
-    margin-left: -245px;
+    margin-left: -255px;
     margin-top: -25px;
     font-size: 10px;
 }

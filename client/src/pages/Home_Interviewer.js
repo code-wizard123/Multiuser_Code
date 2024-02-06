@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import '../css/Home_Interviewer.css'
 import { RoomProvider } from '../context/RoomContext'
 
+
 const Home = () => {
   const createRoom = () => {
     console.log("Creating Room")
@@ -20,7 +21,8 @@ const Home = () => {
               <p>Welcome to our online interview hub, where opportunities meet talent. Designed to connect employers with top-notch candidates. Navigate user-friendly features, discover insightful resources, and embark on a journey of meaningful conversations. Your next career milestone awaits – dive into a world of possibilities and make your interview experience exceptional</p>
             </div>
             <div className='interview-submit'>
-              <button onClick={createRoom}>Create Meeting</button>
+              <button type="reset">Create Meeting</button>
+              <input type='text' className='code-submit' placeholder='Enter the Code'></input>
             </div>
           </div>
           <div className='right'>
@@ -48,7 +50,7 @@ const Home = () => {
             <p className='text-bold'>Qualification: Bachelor's degree in Computer Science</p>
           </div>
           <div className='take-meet'>
-            <button type="reset" className='take-meet-btn'>Take Meeting</button>
+            <button type="reset" className='take-meet-btn'>Schedule Meeting</button>
           </div>
         </div>
 
@@ -63,7 +65,7 @@ const Home = () => {
             <p className='text-bold'>Qualification: Bachelor's degree in Computer Science</p>
           </div>
           <div className='take-meet'>
-            <button type="reset" className='take-meet-btn'>Take Meeting</button>
+            <button type="reset" className='take-meet-btn'>Schedule Meeting</button>
           </div>
         </div>
 
@@ -78,7 +80,7 @@ const Home = () => {
             <p className='text-bold'>Qualification: Bachelor's degree in Computer Science</p>
           </div>
           <div className='take-meet'>
-            <button type="reset" className='take-meet-btn'>Take Meeting</button>
+            <button type="reset" className='take-meet-btn'>Schedule Meeting</button>
           </div>
         </div>
       </div>

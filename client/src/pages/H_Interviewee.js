@@ -1,5 +1,6 @@
 import React from 'react'
 import '../css/Home_Interviewee.css'
+
 const Home_B = () => {
   return (
     <div className='margin-auto-B'>
@@ -13,7 +14,8 @@ const Home_B = () => {
               <p>Welcome to our online interview hub, where opportunities meet talent. Designed to connect employers with top-notch candidates. Navigate user-friendly features, discover insightful resources, and embark on a journey of meaningful conversations. Your next career milestone awaits – dive into a world of possibilities and make your interview experience exceptional</p>
             </div>
             <div className='interview-submit-B'>
-              <button type="reset">Create Meeting</button>
+              <button type="reset">Join Meeting</button>
+              <input type='text' className='code-submit-B' placeholder='Enter the Code'></input>
             </div>
           </div>
           <div className='right-B'>
@@ -24,7 +26,7 @@ const Home_B = () => {
 
       </div>
       <div className='Details-B'>
-        <h3 className='h3-details-B'>Interviewee Details</h3>
+        <h3 className='h3-details-B'>Courses Offered</h3>
       </div>
 
       <div className='scroll-details-B'>

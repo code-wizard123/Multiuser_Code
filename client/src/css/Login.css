@@ -18,7 +18,8 @@
 
 .mid {
     
-    width: 320px;
+      
+    width: 350px;
     padding: 10px;
     background-color: white;
     border-radius: 10px;
@@ -43,6 +44,7 @@
 
 .leftfloat {
     text-align: left;
+    width: 107%;
 }
 
 .leftfloattext {
@@ -72,7 +74,7 @@ h2 {
  */
 .switch-container {
     display: inline-block;
-
+    
 }
 
 input[type="checkbox"] {
@@ -88,7 +90,7 @@ input[type="checkbox"] {
     border-radius: 10px;
     cursor: pointer;
     float: right;
-    margin-right: 14px;
+    margin-right: 20px;
 }
 
 .switch::before {
