@@ -1,6 +1,7 @@
 import React from 'react'
 import '../css/Home_Interviewer.css'
 
+
 const Home = () => {
   return (
     <div className='margin-auto'>
@@ -15,6 +16,7 @@ const Home = () => {
             </div>
             <div className='interview-submit'>
               <button type="reset">Create Meeting</button>
+              <input type='text' className='code-submit' placeholder='Enter the Code'></input>
             </div>
           </div>
           <div className='right'>
@@ -42,7 +44,7 @@ const Home = () => {
             <p className='text-bold'>Qualification: Bachelor's degree in Computer Science</p>
           </div>
           <div className='take-meet'>
-            <button type="reset" className='take-meet-btn'>Take Meeting</button>
+            <button type="reset" className='take-meet-btn'>Schedule Meeting</button>
           </div>
         </div>
 
@@ -57,7 +59,7 @@ const Home = () => {
             <p className='text-bold'>Qualification: Bachelor's degree in Computer Science</p>
           </div>
           <div className='take-meet'>
-            <button type="reset" className='take-meet-btn'>Take Meeting</button>
+            <button type="reset" className='take-meet-btn'>Schedule Meeting</button>
           </div>
         </div>
 
@@ -72,7 +74,7 @@ const Home = () => {
             <p className='text-bold'>Qualification: Bachelor's degree in Computer Science</p>
           </div>
           <div className='take-meet'>
-            <button type="reset" className='take-meet-btn'>Take Meeting</button>
+            <button type="reset" className='take-meet-btn'>Schedule Meeting</button>
           </div>
         </div>
       </div>

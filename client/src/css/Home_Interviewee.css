@@ -18,6 +18,7 @@ body {
     width: 90%;
     display: flex; 
  flex-wrap: wrap-reverse;
+ margin-top: 100px;
 
 }
 
@@ -46,13 +47,25 @@ body {
 }
 
 .interview-submit-B button {
-    width: 50%;
+    width: 30%;
+    line-height: 18px;
+    border-radius: 5px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
-
+.code-submit-B{
+   margin-left: 15px;
+    width: 40%;
+    padding: 12px;
+    line-height: 18px;
+    border-radius: 5px;
+    border: 1px solid rgb(70, 70, 70);
+    outline: none;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
 .right-B {
     width: 50%;
-
     text-align: center;
+    margin-top: -50px;
 }
 
 .right-B img {
@@ -135,12 +148,12 @@ body {
         display: flex;
         justify-content: center;
         flex-wrap: wrap-reverse;
-
+        margin-top: 0px;
     }
 
     .left-B {
         width: 100%;
-
+        margin-top: -80px;
     }
 
     .left-B {
@@ -179,6 +192,7 @@ body {
     .left-butn-B {
         width: 40%;
         line-height: 20px;
+        font-size: 10px;
     }
 
     .text-A-B {
@@ -261,6 +275,7 @@ body {
     .left-butn-B {
         width: 40%;
         line-height: 20px;
+        font-size: 70px;
     }
 
     .text-A-B {
@@ -289,10 +304,13 @@ body {
         width: 100%;
         text-align: center;
     }
+    .interview-submit-B button{
+        width: 30%;
+        font-size: 11px;
+    }
 }
 
 @media screen and (max-width: 400px) {
-
 
 
     .text-A-B p {
