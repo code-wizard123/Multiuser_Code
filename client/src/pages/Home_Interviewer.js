@@ -5,10 +5,15 @@ import { RoomProvider } from '../context/RoomContext'
 
 
 const Home = () => {
-  const createRoom = () => {
-    console.log("Creating Room")
+  const [code, setCode] = React.useState('');
+
+  const handleChange = (e) => {
+    if(e.target.value.length > 10){
+      return;
+    }
+    setCode(e.target.value);
   }
-  
+
   return (
     <div className='margin-auto'>
       <div className='outer-interviewer'>
@@ -22,7 +27,7 @@ const Home = () => {
             </div>
             <div className='interview-submit'>
               <button type="reset">Create Meeting</button>
-              <input type='text' className='code-submit' placeholder='Enter the Code'></input>
+              <input type='text' onChange={(e) => handleChange(e)} value={code} className='code-submit' placeholder='abcd-efg-hij'></input>
             </div>
           </div>
           <div className='right'>
