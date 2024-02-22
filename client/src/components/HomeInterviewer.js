@@ -1,14 +1,11 @@
 import React from 'react'
-import { useNavigate } from 'react-router-dom'
 import '../css/Home_Interviewer.css'
-import { RoomProvider } from '../context/RoomContext'
 
-
-const Home = () => {
+const HomeInterviewer = () => {
   const [code, setCode] = React.useState('');
 
   const handleChange = (e) => {
-    if(e.target.value.length > 10){
+    if (e.target.value.length > 10) {
       return;
     }
     setCode(e.target.value);
@@ -100,4 +97,4 @@ const Home = () => {
   )
 }
 
-export default Home
+export default HomeInterviewer

@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import '../css/M_interviewer.css';
 
-const M_interviewer = () => {
+const Meet = () => {
   const [isStyle, setIsStyle] = useState(true);
   const localStream = useRef(null);
 
@@ -81,7 +81,7 @@ const M_interviewer = () => {
   )
 }
 
-export default M_interviewer
+export default Meet
 
 
 

@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import '../css/Login.css'
 import axios from 'axios'
 
 const Login = () => {
+  const navigate = useNavigate();
   const [interviewer, setInterviewer] = useState(true)
   const [error, setError] = useState("")
   const [details, setDetails] = useState({
@@ -20,7 +22,12 @@ const Login = () => {
       .then(async (res) => {
         if (res.status === 200) {
           const data = await res.data;
-          console.log(data);
+
+          //Create a Crumb to display to User
+
+
+          //Redirect to Home Page
+          navigate("/");
         }
       }).catch((err) => {
         setError(err.response.data.error);

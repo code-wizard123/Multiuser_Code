@@ -20,7 +20,7 @@ const Signup = () => {
     })
       .then(async (res) => {
         const data = await res.data;
-        console.log(data);
+        alert(data.message);
       }).catch((err) => {
         setError(err.response.data.errors.email + err.response.data.errors.password);
       });

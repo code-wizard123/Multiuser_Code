@@ -37,7 +37,9 @@ router.post('/register', async (req, res) => {
     try {
         const user = await User.create({ email, password, role });
         const token = createToken(user._id);
-        res.status(200).json({ user: email, token, role });
+        res.cookie("token", token, {
+            httpOnly: true
+        }).cookie("role", user.role).status(200).json({ "message": "User Registered Successfully" });
     }
     catch (err) {
         const errors = handleErrors(err);
@@ -57,9 +59,9 @@ router.post('/login', async (req, res) => {
                 const token = createToken(user._id);
                 res.cookie("token", token, {
                     httpOnly: true,
-                }).status(200).json({ user: user.email, token, role: user.role });
+                }).cookie("role", user.role).status(200).json({ "message": "User Logged In successfully" });
             }
-            else{
+            else {
                 res.status(400).json({ error: 'Incorrect Password' });
             }
         }
@@ -74,15 +76,14 @@ router.post('/login', async (req, res) => {
 });
 
 router.get('/loggedIn', (req, res) => {
-    try{
+    try {
         const token = req.cookies.token;
-        if(!token)  return res.json(false);
+        if (!token) return res.json(false);
 
-        jwt.verify(token, process.env.JWT_SECRET);
-
+        const user = jwt.verify(token, process.env.JWT_SECRET);
         res.send(true);
     }
-    catch(err){
+    catch (err) {
         res.json(false);
     }
 });
