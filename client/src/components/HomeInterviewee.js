@@ -1,7 +1,7 @@
 import React from 'react'
 import '../css/Home_Interviewee.css'
 
-const Home_B = () => {
+const HomeInterviewee = () => {
   return (
     <div className='margin-auto-B'>
       <div className='outer-interviewer-B'>
@@ -43,7 +43,7 @@ const Home_B = () => {
             <p className='text-bold-B'>Qualification: Bachelor's degree in Computer Science</p>
           </div>
           <div className='take-meet-B'>
-            <button type="reset" onclick="location.href='http:/Html/Storepage.html'" className='take-meet-btn-B'>Take Meeting</button>
+            <button type="reset" className='take-meet-btn-B'>Take Meeting</button>
           </div>
         </div>
 
@@ -58,7 +58,7 @@ const Home_B = () => {
             <p className='text-bold-B'>Qualification: Bachelor's degree in Computer Science</p>
           </div>
           <div className='take-meet-B'>
-            <button type="reset" onclick="location.href='http:/Html/Storepage.html'" className='take-meet-btn-B'>Take Meeting</button>
+            <button type="reset" className='take-meet-btn-B'>Take Meeting</button>
           </div>
         </div>
 
@@ -73,7 +73,7 @@ const Home_B = () => {
             <p className='text-bold-B'>Qualification: Bachelor's degree in Computer Science</p>
           </div>
           <div className='take-meet-B'>
-            <button type="reset" onclick="location.href='http:/Html/Storepage.html'" className='take-meet-btn-B'>Take Meeting</button>
+            <button type="reset" className='take-meet-btn-B'>Take Meeting</button>
           </div>
         </div>
       </div>
@@ -90,4 +90,4 @@ const Home_B = () => {
   )
 }
 
-export default Home_B
+export default HomeInterviewee

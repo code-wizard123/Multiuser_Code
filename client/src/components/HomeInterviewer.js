@@ -1,8 +1,16 @@
 import React from 'react'
 import '../css/Home_Interviewer.css'
 
+const HomeInterviewer = () => {
+  const [code, setCode] = React.useState('');
 
-const Home = () => {
+  const handleChange = (e) => {
+    if (e.target.value.length > 10) {
+      return;
+    }
+    setCode(e.target.value);
+  }
+
   return (
     <div className='margin-auto'>
       <div className='outer-interviewer'>
@@ -16,7 +24,7 @@ const Home = () => {
             </div>
             <div className='interview-submit'>
               <button type="reset">Create Meeting</button>
-              <input type='text' className='code-submit' placeholder='Enter the Code'></input>
+              <input type='text' onChange={(e) => handleChange(e)} value={code} className='code-submit' placeholder='abcd-efg-hij'></input>
             </div>
           </div>
           <div className='right'>
@@ -86,9 +94,7 @@ const Home = () => {
       <br></br>
       <br></br>
     </div>
-
-
   )
 }
 
-export default Home
+export default HomeInterviewer
