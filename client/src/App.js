@@ -7,6 +7,7 @@ import Login_B from './pages/Login_B';
 import Signup from './pages/Signup';
 import Signup_B from './pages/Signup_B';
 import M_interviewer from './pages/M_interviewer';
+import Chat from './pages/Chat';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="/Signup" element={<Signup />} />
         <Route path="/Signup_B" element={<Signup_B />} />
         <Route path="/M_interviewer" element={<M_interviewer />} />
+        <Route path="/Chat" element={<Chat />} />
       </Routes>
     </Router>
   );
