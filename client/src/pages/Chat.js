@@ -46,7 +46,7 @@ const Chat = () => {
                   className='Chat-input'
                   type="text"
                   id="value"
-                  placeholder="Enter text"
+                  placeholder="Type Here..."
                   value={inputValue}
                   onChange={handleInputChange}
                 />
