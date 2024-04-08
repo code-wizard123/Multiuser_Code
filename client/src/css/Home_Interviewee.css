@@ -361,3 +361,76 @@ body {
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
     z-index: 1001; /* Ensure the modal appears above the blurred background */
   }
+  .start-end-pad{
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  }
+  .start-end{
+    padding: 10px;
+    margin-top: 10px;
+    line-height: 30px;
+    border-color: #4707ff;border-radius: 10px;
+  }
+  .select-range{
+  float: right;
+  padding: 6px;
+  border-color: #4707ff;border-radius: 10px;
+  }
+  label{
+    font-weight: bolder;
+  }
+  .send-req{
+    width: 100%;
+    font-family: "Poppins";
+  }
+  .course-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 20px;
+}
+
+.course-card {
+  width: 30%; /* Adjust the width as needed for responsiveness */
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+.course-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.course-details {
+  text-align: center;
+}
+
+.course-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.course-price {
+  font-weight: bold;
+}
+
+.buy-button {
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.buy-button:hover {
+  background-color: #0056b3;
+}

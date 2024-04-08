@@ -1,9 +1,39 @@
 import React, { useState } from 'react';
 import '../css/Home_Interviewee.css';
 
+const DateRangePicker = ({ startDate, endDate, handleStartDateChange, handleEndDateChange }) => {
+  return (
+    <div className='start-end-pad'>
+      <label htmlFor="startDate">Start Date:</label>
+      <input
+        className='start-end'
+        type="date"
+        id="startDate"
+        value={startDate}
+        onChange={handleStartDateChange}
+      />
+      <br></br>
+      <label htmlFor="endDate">End Date:</label>
+      <input
+        className='start-end'
+        type="date"
+        id="endDate"
+        value={endDate}
+        onChange={handleEndDateChange}
+        min={startDate} // Set min attribute to start date to prevent selecting earlier dates
+      />
+    </div>
+  );
+};
+
+
+
 const HomeIntervieweeWithModal = () => {
   const [showModal, setShowModal] = useState(false);
   const [codeValue, setCodeValue] = useState('');
+  const [startDate, setStartDate] = useState('');
+  const [endDate, setEndDate] = useState('');
+  const [selectedOption, setSelectedOption] = useState('');
 
   const toggleModal = () => {
     setShowModal(!showModal);
@@ -13,8 +43,21 @@ const HomeIntervieweeWithModal = () => {
     setCodeValue(e.target.value);
   };
 
+  const handleStartDateChange = (e) => {
+    setStartDate(e.target.value);
+  };
+
+  const handleEndDateChange = (e) => {
+    setEndDate(e.target.value);
+  };
+
+  const handleDropdownChange = (e) => {
+    setSelectedOption(e.target.value);
+  };
+
   const handleSubmit = () => {
     console.log('Submitted code:', codeValue);
+    console.log('Selected option:', selectedOption);
     toggleModal(); // Close the modal after handling the submission
   };
 
@@ -55,14 +98,22 @@ const HomeIntervieweeWithModal = () => {
           <div className="modal-content">
             <span className="close" onClick={toggleModal}>&times;</span>
             <h2>Join Meeting</h2>
-            <input
-              type='text'
-              className='code-submit-B'
-              placeholder='Enter the Code'
-              value={codeValue}
-              onChange={handleInputChange}
+            <DateRangePicker
+              startDate={startDate}
+              endDate={endDate}
+              handleStartDateChange={handleStartDateChange}
+              handleEndDateChange={handleEndDateChange}
             />
-            <button type="button" onClick={handleSubmit}>Submit</button>
+            <br></br>
+            <label htmlFor="dropdown">Select Time-Span:</label>
+            
+            <select className='select-range' id="dropdown" value={selectedOption} onChange={handleDropdownChange}>
+              <option value="">Range</option>
+              <option value="Option 1">8am-11am</option>
+              <option value="Option 2">2pm-5pm</option>
+              <option value="Option 3">8pm-11pm</option>
+            </select>
+            <button className="send-req" type="button" onClick={handleSubmit}>Send Request</button>
           </div>
         </div>
       )}
@@ -71,7 +122,13 @@ const HomeIntervieweeWithModal = () => {
         <h3 className='h3-details-B'>Courses Offered</h3>
       </div>
 
-      <div className='scroll-details-B'></div>
+      <div className='scroll-details-B'>
+        {/* Course cards */}
+        <div className="course-container">
+        
+          {/* Add more CourseCard components as needed */}
+        </div>
+      </div>
 
       <br />
       <br />
