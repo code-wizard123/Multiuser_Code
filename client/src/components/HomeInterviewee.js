@@ -1,7 +1,23 @@
-import React from 'react'
-import '../css/Home_Interviewee.css'
+import React, { useState } from 'react';
+import '../css/Home_Interviewee.css';
 
-const HomeInterviewee = () => {
+const HomeIntervieweeWithModal = () => {
+  const [showModal, setShowModal] = useState(false);
+  const [codeValue, setCodeValue] = useState('');
+
+  const toggleModal = () => {
+    setShowModal(!showModal);
+  };
+
+  const handleInputChange = (e) => {
+    setCodeValue(e.target.value);
+  };
+
+  const handleSubmit = () => {
+    console.log('Submitted code:', codeValue);
+    toggleModal(); // Close the modal after handling the submission
+  };
+
   return (
     <div className='margin-auto-B'>
       <div className='outer-interviewer-B'>
@@ -14,80 +30,57 @@ const HomeInterviewee = () => {
               <p>Welcome to our online interview hub, where opportunities meet talent. Designed to connect employers with top-notch candidates. Navigate user-friendly features, discover insightful resources, and embark on a journey of meaningful conversations. Your next career milestone awaits – dive into a world of possibilities and make your interview experience exceptional</p>
             </div>
             <div className='interview-submit-B'>
-              <button type="reset">Join Meeting</button>
-              <input type='text' className='code-submit-B' placeholder='Enter the Code'></input>
+              <button type="button" onClick={toggleModal}>Join Meeting</button>
+              <input
+                type='text'
+                className='code-submit-B'
+                placeholder='Enter the Code'
+                value={codeValue}
+                onChange={handleInputChange}
+              />
             </div>
           </div>
           <div className='right-B'>
-            <img src='Webinar-pana.png'></img>
+            <img src='Webinar-pana.png' alt='Webinar'></img>
           </div>
-
         </div>
-
       </div>
+
+      {/* Blurred background */}
+      {showModal && <div className="blur-background"></div>}
+
+      {/* Modal */}
+      {showModal && (
+        <div className="modal">
+          <div className="modal-content">
+            <span className="close" onClick={toggleModal}>&times;</span>
+            <h2>Join Meeting</h2>
+            <input
+              type='text'
+              className='code-submit-B'
+              placeholder='Enter the Code'
+              value={codeValue}
+              onChange={handleInputChange}
+            />
+            <button type="button" onClick={handleSubmit}>Submit</button>
+          </div>
+        </div>
+      )}
+
       <div className='Details-B'>
         <h3 className='h3-details-B'>Courses Offered</h3>
       </div>
 
-      <div className='scroll-details-B'>
+      <div className='scroll-details-B'></div>
 
-        <div className='card-details-B'>
-
-          <div className='card-A-witdh-B'>
-            <img src='A-bg.png' className='A-img-width-B'></img>
-          </div>
-          <div className='text-width-B'>
-            <p className='text-A-bold-B'>Name : Serena Rodriguez</p>
-          </div>
-          <div className='text-width-B'>
-            <p className='text-bold-B'>Qualification: Bachelor's degree in Computer Science</p>
-          </div>
-          <div className='take-meet-B'>
-            <button type="reset" className='take-meet-btn-B'>Take Meeting</button>
-          </div>
-        </div>
-
-        <div className='card-details-B'>
-          <div className='card-A-witdh-B'>
-            <img src='B-bg.png' className='A-img-width-B'></img>
-          </div>
-          <div className='text-width-B'>
-            <p className='text-A-bold-B'>Name : Serena Rodriguez</p>
-          </div>
-          <div className='text-width-B'>
-            <p className='text-bold-B'>Qualification: Bachelor's degree in Computer Science</p>
-          </div>
-          <div className='take-meet-B'>
-            <button type="reset" className='take-meet-btn-B'>Take Meeting</button>
-          </div>
-        </div>
-
-        <div className='card-details-B'>
-          <div className='card-A-witdh-B'>
-            <img src='C-bg.png' className='A-img-width'></img>
-          </div>
-          <div className='text-width-B'>
-            <p className='text-A-bold-B'>Name : Serena Rodriguez</p>
-          </div>
-          <div className='text-width-B'>
-            <p className='text-bold-B'>Qualification: Bachelor's degree in Computer Science</p>
-          </div>
-          <div className='take-meet-B'>
-            <button type="reset" className='take-meet-btn-B'>Take Meeting</button>
-          </div>
-        </div>
-      </div>
-
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
     </div>
+  );
+};
 
-
-  )
-}
-
-export default HomeInterviewee
+export default HomeIntervieweeWithModal;

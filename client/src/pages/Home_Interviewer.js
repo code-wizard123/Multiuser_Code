@@ -2,6 +2,7 @@ import React from 'react'
 import '../css/Home_Interviewer.css'
 
 
+
 const Home = () => {
   return (
     <div className='margin-auto'>
@@ -31,52 +32,7 @@ const Home = () => {
       </div>
 
       <div className='scroll-details'>
-
-        <div className='card-details'>
-
-          <div className='card-A-witdh'>
-            <img src='A-bg.png' alt="A" className='A-img-width'></img>
-          </div>
-          <div className='text-width'>
-            <p className='text-A-bold'>Name : Serena Rodriguez</p>
-          </div>
-          <div className='text-width'>
-            <p className='text-bold'>Qualification: Bachelor's degree in Computer Science</p>
-          </div>
-          <div className='take-meet'>
-            <button type="reset" className='take-meet-btn'>Schedule Meeting</button>
-          </div>
-        </div>
-
-        <div className='card-details'>
-          <div className='card-A-witdh'>
-            <img src='B-bg.png' alt="A" className='A-img-width'></img>
-          </div>
-          <div className='text-width'>
-            <p className='text-A-bold'>Name : Serena Rodriguez</p>
-          </div>
-          <div className='text-width'>
-            <p className='text-bold'>Qualification: Bachelor's degree in Computer Science</p>
-          </div>
-          <div className='take-meet'>
-            <button type="reset" className='take-meet-btn'>Schedule Meeting</button>
-          </div>
-        </div>
-
-        <div className='card-details'>
-          <div className='card-A-witdh'>
-            <img src='C-bg.png' alt="A" className='A-img-width'></img>
-          </div>
-          <div className='text-width'>
-            <p className='text-A-bold'>Name : Serena Rodriguez</p>
-          </div>
-          <div className='text-width'>
-            <p className='text-bold'>Qualification: Bachelor's degree in Computer Science</p>
-          </div>
-          <div className='take-meet'>
-            <button type="reset" className='take-meet-btn'>Schedule Meeting</button>
-          </div>
-        </div>
+    
       </div>
 
       <br></br>

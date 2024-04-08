@@ -3,7 +3,10 @@ import '../css/Signup_B.css'
 const Signup_B = () => {
     return (
         <div className='outer-main-div-signup-B'>
-            {/* <div className='navbar'></div> */}
+            <ul className='ul'>
+                <li className='li'><a class="active" href="">Login</a></li>
+                <li className='li'><a href="#news"><span style={{ color: "#4707ff" }}>Sign Up</span></a></li>
+            </ul>
             <div className='inner-main-div-signup-B'>
                 <div className='mid-signup-B'>
                     <form>

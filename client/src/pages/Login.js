@@ -45,7 +45,10 @@ const Login = () => {
 
   return (
     <div className='outer-main-div'>
-      {/* <div className='navbar'></div> */}
+<ul className='ul'>
+  <li className='li'><a class="active" href=""><span style={{color: "#4707ff"}}>Login</span></a></li>
+  <li className='li'><a href="#news">Sign Up</a></li>
+</ul>
       <div className='inner-main-div'>
         <div className='mid'>
           <form>

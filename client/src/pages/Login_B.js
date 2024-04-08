@@ -1,10 +1,15 @@
 import React from 'react'
 import '../css/Login_B.css'
+
+
 const Login_B = () => {
 
   return (
     <div className='outer-main-div-B'>
-      {/* <div className='navbar'></div> */}
+     <ul className='ul'>
+  <li className='li'><a class="active" href="pages/Login.js"><span style={{color: "#4707ff"}}>Login</span></a></li>
+  <li className='li'><a href="pages/Signup.js">Sign Up</a></li>
+</ul>
       <div className='inner-main-div-B'>
         <div className='mid-B'>
 

@@ -37,7 +37,10 @@ const Signup = () => {
 
   return (
     <div className='outer-main-div-signup'>
-      {/* <div className='navbar'></div> */}
+      <ul className='ul'>
+        <li className='li'><a class="active" href="">Login</a></li>
+        <li className='li'><a href="#news"><span style={{ color: "#4707ff" }}>Sign Up</span></a></li>
+      </ul>
       <div className='inner-main-div-signup'>
         <div className='mid-signup'>
           <form>
@@ -63,18 +66,18 @@ const Signup = () => {
               </div>
               <p className='switch-txt-left-signup'>Switch to {!interviewer ? "Interviewer" : "Interviewee"} Sign-in</p>
             </div>
-          
 
-    
 
-        <div>
-          <br></br>
-          <div className='paddbutton-signup'>
-            <button type="reset" onClick={handleSubmit}>Sign Up</button>
-          </div>
+
+
+            <div>
+              <br></br>
+              <div className='paddbutton-signup'>
+                <button type="reset" onClick={handleSubmit}>Sign Up</button>
+              </div>
+            </div>
+          </form>
         </div>
-      </form>
-    </div>
 
       </div >
     </div >
