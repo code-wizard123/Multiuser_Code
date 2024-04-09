@@ -106,7 +106,7 @@ const HomeIntervieweeWithModal = () => {
             />
             <br></br>
             <label htmlFor="dropdown">Select Time-Span:</label>
-            
+
             <select className='select-range' id="dropdown" value={selectedOption} onChange={handleDropdownChange}>
               <option value="">Range</option>
               <option value="Option 1">8am-11am</option>
@@ -123,13 +123,123 @@ const HomeIntervieweeWithModal = () => {
       </div>
 
       <div className='scroll-details-B'>
-        {/* Course cards */}
-        <div className="course-container">
-        
-          {/* Add more CourseCard components as needed */}
-        </div>
-      </div>
+        <div className='course-card'>
+          <div className='img-png'><img src='C-bg.png' style={{ width: '100%' }}></img>
 
+          </div>
+
+          <div>
+            <h2>Java Programming Masterclass</h2>
+          </div>
+          <div>
+            <p>Take your Java skills to the next level with this masterclass.</p>
+          </div>
+          <div>
+            <h2>Price : 3999</h2>
+          </div>
+          <div>
+          <button className="buy" type="button" >buy</button>
+          </div>
+        </div>
+        <div className='course-card'>
+          <div className='img-png'><img src='B-bg.png' style={{ width: '100%' }}></img>
+
+          </div>
+
+          <div>
+            <h2>Python for Beginners</h2>
+          </div>
+          <div>
+            <p>A beginner-friendly course to learn Python programming.</p>
+          </div>
+          <div>
+            <h2>Price : 2999 Rs</h2>
+          </div>
+          <div>
+          <button className="buy" type="button" >buy</button>
+          </div>
+        </div>
+
+  <div className='course-card'>
+          <div className='img-png'><img src='C-bg.png' style={{ width: '100%' }}></img>
+
+          </div>
+
+          <div>
+            <h2>JavaScript Fundamentals</h2>
+          </div>
+          <div>
+            <p>Learn the basics of JavaScript programming language.</p>
+          </div>
+          <div>
+            <h2>Price : 2199 Rs</h2>
+          </div>
+          <div>
+          <button className="buy" type="button" >buy</button>
+          </div>
+          
+        </div>
+
+      </div>
+      <div className='scroll-details-B'>
+        <div className='course-card'>
+          <div className='img-png'><img src='C-bg.png' style={{ width: '100%' }}></img>
+
+          </div>
+
+          <div>
+            <h2>Java Programming Masterclass</h2>
+          </div>
+          <div>
+            <p>Take your Java skills to the next level with this masterclass.</p>
+          </div>
+          <div>
+            <h2>Price : 3999</h2>
+          </div>
+          <div>
+          <button className="buy" type="button" >buy</button>
+          </div>
+        </div>
+        <div className='course-card'>
+          <div className='img-png'><img src='B-bg.png' style={{ width: '100%' }}></img>
+
+          </div>
+
+          <div>
+            <h2>Python for Beginners</h2>
+          </div>
+          <div>
+            <p>A beginner-friendly course to learn Python programming.</p>
+          </div>
+          <div>
+            <h2>Price : 2999 Rs</h2>
+          </div>
+          <div>
+          <button className="buy" type="button" >buy</button>
+          </div>
+        </div>
+
+  <div className='course-card'>
+          <div className='img-png'><img src='C-bg.png' style={{ width: '100%' }}></img>
+
+          </div>
+
+          <div>
+            <h2>JavaScript Fundamentals</h2>
+          </div>
+          <div>
+            <p>Learn the basics of JavaScript programming language.</p>
+          </div>
+          <div>
+            <h2>Price : 2199 Rs</h2>
+          </div>
+          <div>
+          <button className="buy" type="button" >buy</button>
+          </div>
+          
+        </div>
+
+      </div>
       <br />
       <br />
       <br />
