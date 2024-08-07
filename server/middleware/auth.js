@@ -1,25 +1,25 @@
 const jwt = require('jsonwebtoken');
 
-module.exports = function auth(req, res, next){
-    try{
+module.exports = function auth(req, res, next) {
+    try {
         const { token } = req.cookies;
 
-        if(!token){
-            return res.status(401).json({message: 'Unauthorized'});
+        if (!token) {
+            return res.status(401).json({ message: 'Unauthorized' });
         }
 
         jwt.verify(token, process.env.JWT_SECRET, (err, decodedToken) => {
-            if(err){
-                return res.status(401).json({message: 'Unauthorized'});
+            if (err) {
+                return res.status(401).json({ message: 'Unauthorized' });
             }
-            else{
+            else {
                 req.id = decodedToken._id;
                 return next();
             }
         });
     }
-    catch(err){
+    catch (err) {
         console.error(err);
-        res.status(401).json({message: 'Unauthorized'});
+        res.status(401).json({ message: 'Unauthorized' });
     }
 }
