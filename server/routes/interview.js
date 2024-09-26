@@ -2,27 +2,21 @@ const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
+const auth = require('../middleware/auth.js');
 
 //Models
 const User = require('../models/user.js');
 const Interview = require('../models/Interview.js');
-const Meet = require('../models/Meet.js');
 
 //Middleware
 router.use(require('../middleware/auth.js'));
 
-//Helper Functions
-function generateMeetID() {
-    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-    let randomNumber = '';
-    for (let i = 0; i < 10; i++) {
-        randomNumber += characters.charAt(Math.floor(Math.random() * characters.length));
-    }
-    return randomNumber;
-}
-
 //Routes
 router.post('/create', async (req, res) => {
+    if(req.role !== 'interviewee'){
+        return res.status(401).json({ message: 'Unauthorized' });
+    }
+
     const interviewee_id = req.id;
 
     const { startDate, endDate } = req.body;
@@ -37,7 +31,7 @@ router.post('/create', async (req, res) => {
     try {
         const interviewee = await User.findById(interviewee_id);
 
-        if (!interviewee || interviewee.role !== 'interviewee') {
+        if (!interviewee) {
             return res.status(404).json({ message: 'Interviewee not found' });
         }
 
@@ -51,64 +45,94 @@ router.post('/create', async (req, res) => {
         const interviewer = interviewers[Math.floor(Math.random() * int_len)];
 
         const newInterview = new Interview({
-            interviewee, startDate, endDate, interviewer
+            startDate: newstartDate,
+            endDate: newendDate,
+            created_by: interviewee_id,
+            participants: [interviewee_id, interviewer._id],
+            interviewer
         });
 
         const interview = await newInterview.save();
-        return res.status(201).json(interview);
+        return res.status(200).json(interview);
     }
     catch (err) {
         res.status(500).json({ 'error': err });
     }
 });
 
-router.post('/accept', async (req, res) => {
+router.post('/accept/:id', async (req, res) => {
     const interviewer_id = req.id;
-    const { interview_id } = req.body;
+    const { id } = req.params;
 
     try {
         const interviewer = await User.findById(interviewer_id);
 
         //Error Handling
-        if (!interviewer || interviewer.role !== 'interviewer') {
+        if (!interviewer) {
             return res.status(404).json({ message: 'Interviewer not found' });
         }
 
-        const interview = await Interview.findById(interview_id);
-
-        if (interview.isScheduled || interview.isCompleted) {
-            return res.status(400).json({ message: 'Interview already accepted/rejected' });
+        
+        if (interviewer.role !== 'interviewer') {
+            return res.status(401).json({ message: 'Unauthorized' });
+        }
+        
+        const interview = await Interview.findById(id);
+        
+        if (interview.isScheduled) {
+            return res.status(400).json({ message: 'Interview already Scheduled' });
+        }
+        
+        if (interview.isCompleted) {
+            return res.status(400).json({ message: 'Interview already Completed' });
         }
 
         if (interview.interviewer.toString() !== interviewer_id) {
             return res.status(401).json({ message: 'Unauthorized' });
         }
 
-        //Create Meet
-        
-        const random = generateMeetID();
-
-        while (await Meet.findOne({ meet_id: random })) {
-            random = generateMeetID();
-        }
-
-        const meet = new Meet({
-            meet_id: random,
-            created_by: interviewer_id,
-            participants: [interview.interviewee, interviewer]
-        })
-
-        const newMeet = await meet.save();
-
-        interview.meet = newMeet;
         interview.isScheduled = true;
 
         await interview.save();
-
-        return res.status(200).json({"meet_id": meet.meet_id});
+        return res.status(200).json({"message": "Interview Scheduled"});
     }
     catch (err) {
+        console.log(err);
         res.status(500).json({ 'error': err });
+    }
+});
+
+//Routes
+router.post('/join/:id', async (req, res) => {
+    const user = await User.findById(req.id);
+    const { id } = req.params;
+
+    try {
+        const interview = await Interview.findById(id);
+
+        if (interview) {
+            if(!interview.isScheduled){
+                return res.status(400).json({ message: 'Interview not Scheduled' });
+            }
+
+            if(interview.isCompleted){
+                return res.status(400).json({ message: 'Interview already Completed' });
+            }
+
+            if(interview.participants.includes(user._id)){
+                return res.status(200).json({ allow: true });
+            }
+            else{
+                return res.status(200).json({ allow: false });
+            }
+        }
+        else {
+            return res.status(404).json({ message: 'Interview not Found' });
+        }
+    }
+    catch(err){
+        console.error(err);
+        return res.status(500).json({ message: 'Server Error' });
     }
 });
 

@@ -19,7 +19,7 @@ app.use(cors({
     credentials: true,
 }));
 
-//Routes use
+//Routes
 app.use('/auth', require('./routes/auth'));
 app.use('/interview', require('./routes/interview'));
 

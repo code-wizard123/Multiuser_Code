@@ -19,11 +19,11 @@ const Chat = () => {
   return (
     <div className='Chat-div'>
       <div className='Chat-display'>
-        <div className='Chat-right'>
+        {/* <div className='Chat-right'>
           <div className='Chat-btn-D'>
             <button><img src='reject.png' alt="Reject"></img></button>
           </div>
-        </div>
+        </div> */}
         <div className='Chat-api'>
           <div className='Chat-body'>
             <div className='Chat-head'>

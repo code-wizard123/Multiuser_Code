@@ -1,22 +1,27 @@
-import React, { useEffect, useState } from 'react'
-import Cookies from 'js-cookie'
+import React, { useEffect } from 'react'
 import HomeInterviewer from '../components/HomeInterviewer'
 import HomeInterviewee from '../components/HomeInterviewee'
 import { useNavigate } from 'react-router-dom'
+import AuthContext from '../context/AuthContext'
 
 const Home = () => {
     const navigate = useNavigate();
-    const role = Cookies.get("role");
+    const { user, role, loading } = React.useContext(AuthContext);
 
     useEffect(() => {
-        if (!role) {
+        if (!loading && (!user || !role)) {
+            console.log("User not logged in");
             navigate("/login");
         }
-    }, []);
+    }, [role, user, navigate, loading]);
+
+    if(loading) {
+        return <div>Loading...</div>
+    }
 
     return (
         <div>
-            {role === "interviewer" ? <HomeInterviewer /> : <HomeInterviewee />}
+            Hello user. You are logged in as {role}
         </div>
     )
 }

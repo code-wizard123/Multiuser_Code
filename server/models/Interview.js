@@ -2,15 +2,6 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const interviewSchema = new Schema({
-    interviewee: {
-        type: Schema.Types.ObjectId,
-        ref: 'user'
-    },
-    interviewer: {
-        type: Schema.Types.ObjectId,
-        ref: 'user',
-        default: null
-    },
     startDate: {
         type: Date,
         required: true
@@ -23,14 +14,22 @@ const interviewSchema = new Schema({
         type: Boolean,
         default: false
     },
+    scheduledDateTime: {
+        type: Date
+    },
     isCompleted: {
         type: Boolean,
         default: false
     },
-    meet: {
-        type: Schema.Types.ObjectId,
-        ref: 'meet'
-    }
+    created_by: {
+        type: Schema.Types.ObjectId, ref: 'user'
+    },
+    interviewer: {
+        type: Schema.Types.ObjectId, ref: 'user'
+    },
+    participants: {
+        type: Array
+    },
 });
 
 const Interview = mongoose.model('interview', interviewSchema);

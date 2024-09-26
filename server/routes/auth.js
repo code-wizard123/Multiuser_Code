@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
+const auth = require('../middleware/auth.js');
 
 //Models
 const User = require('../models/user.js');
@@ -26,8 +27,8 @@ const handleErrors = (err) => {
     }
 }
 
-const createToken = (_id) => {
-    return jwt.sign({ _id }, process.env.JWT_SECRET, { expiresIn: '3d' });
+const createToken = (_id, role) => {
+    return jwt.sign({ _id, role }, process.env.JWT_SECRET, { expiresIn: '3d' });
 }
 
 //Routes
@@ -36,10 +37,8 @@ router.post('/register', async (req, res) => {
 
     try {
         const user = await User.create({ email, password, role });
-        const token = createToken(user._id);
-        res.cookie("token", token, {
-            httpOnly: true
-        }).cookie("role", user.role).status(200).json({ "message": "User Registered Successfully" });
+        const token = createToken(user._id, role);
+        res.cookie("token", token).status(200).json({ "message": "User Registered Successfully" });
     }
     catch (err) {
         const errors = handleErrors(err);
@@ -56,10 +55,8 @@ router.post('/login', async (req, res) => {
         if (user) {
             const auth = await bcrypt.compare(password, user.password);
             if (auth) {
-                const token = createToken(user._id);
-                res.cookie("token", token, {
-                    httpOnly: true,
-                }).cookie("role", user.role).status(200).json({ "message": "User Logged In successfully" });
+                const token = createToken(user._id, user.role);
+                res.cookie("token", token).status(200).json({ "message": "User Logged In successfully" });
             }
             else {
                 res.status(400).json({ error: 'Incorrect Password' });
@@ -75,17 +72,8 @@ router.post('/login', async (req, res) => {
     }
 });
 
-router.get('/loggedIn', (req, res) => {
-    try {
-        const token = req.cookies.token;
-        if (!token) return res.json(false);
-
-        const user = jwt.verify(token, process.env.JWT_SECRET);
-        res.send(true);
-    }
-    catch (err) {
-        res.json(false);
-    }
+router.get('/check', auth, async (req, res) => {
+    res.status(200).json({"id": req.id, "role": req.role});
 });
 
 module.exports = router;
