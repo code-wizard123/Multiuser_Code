@@ -22,6 +22,7 @@ app.use(cors({
 //Routes
 app.use('/auth', require('./routes/auth'));
 app.use('/interview', require('./routes/interview'));
+app.use('/interviewer', require('./routes/interviewer'));
 
 //Socket Logic
 const io = require('socket.io')(server, {
