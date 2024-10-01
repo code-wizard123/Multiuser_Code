@@ -7,7 +7,6 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 require('dotenv').config();
 const cookieParser = require('cookie-parser');
-const { roomHandler } = require('./RoomHandler/Rooms');
 
 //Middleware
 app.use(express.urlencoded({ extended: true }));
@@ -27,18 +26,34 @@ app.use('/interviewer', require('./routes/interviewer'));
 //Socket Logic
 const io = require('socket.io')(server, {
     cors: {
-        origin: "*",
+        origin: "http://localhost:3000",
         methods: ["GET", "POST"]
     }
 });
 
 io.on('connection', (socket) => {
-    console.log("user connected")
+    console.log("Socket connected", socket.id);
 
-    roomHandler(socket);
+    socket.on('meet:join', ({ meetId }) => {
+        io.to(meetId).emit("user:joined", { socketId: socket.id });
+        socket.join(meetId);
+        io.to(socket.id).emit('meet:join', { meetId });
+    });
 
-    socket.on('disconnect', () => {
-        console.log('user disconnected');
+    socket.on('call:user', ({ to, offer }) => {
+        io.to(to).emit('incoming:call', { from: socket.id, offer });
+    });
+
+    socket.on("call:accepted", ({ to, ans }) => {
+        io.to(to).emit('call:accepted', { from: socket.id, ans });
+    });
+
+    socket.on('peer:nego:needed', ({ to, offer }) => {
+        io.to(to).emit('peer:nego:needed', { from: socket.id, offer });
+    });
+
+    socket.on('peer:nego:done', ({ to, ans }) => {
+        io.to(to).emit('peer:nego:final', { from: socket.id, ans });
     });
 })
 
